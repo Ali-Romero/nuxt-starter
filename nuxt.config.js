@@ -32,6 +32,7 @@ export default {
 
   plugins: [
     '@/plugins/validation.js',
+    '@/plugins/scrollto.js',
   ],
 
   components: true,
