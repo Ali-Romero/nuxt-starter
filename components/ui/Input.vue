@@ -36,6 +36,10 @@ export default {
       type: [String, Number],
       required: true,
     },
+    error: {
+      type: Boolean,
+      default: false,
+    },
     icon: {
       type: String,
       default: '',
@@ -88,7 +92,8 @@ export default {
     },
     classes() {
       return {
-        'ui-input--focus': this.focus
+        'ui-input--focus': this.focus,
+        'ui-input--error': this.error
       }
     }
   },
@@ -101,7 +106,10 @@ export default {
   border: 1px solid grey
 
   &--focus
-    border: 1px solid red
+    border-color: black
+
+  &--error
+    border-color: red
 
   &__icon
     margin-right: 10px
@@ -118,6 +126,7 @@ export default {
     height: 100%
     font-size: inherit
     line-height: inherit
+    color: inherit
     display: block
 
   &__mask
@@ -126,6 +135,7 @@ export default {
     position: absolute
     top: 0
     left: 0
+    pointer-events: none
 
     & span
       visibility: hidden

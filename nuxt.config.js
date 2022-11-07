@@ -30,7 +30,9 @@ export default {
     '@/assets/styles/app.sass',
   ],
 
-  plugins: [],
+  plugins: [
+    '@/plugins/validation.js',
+  ],
 
   components: true,
 
@@ -48,7 +50,9 @@ export default {
     },
   },
 
-  build: {},
+  build: {
+    transpile: ['vee-validate/dist/rules']
+  },
 
   server: {
     host: '0.0.0.0',

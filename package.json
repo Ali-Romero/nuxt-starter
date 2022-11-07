@@ -7,6 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "analyze": "nuxt build --analyze",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
     "lint:prettier": "prettier --check .",
@@ -19,7 +20,9 @@
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
     "v-mask": "^2.3.0",
+    "vee-validate": "^3.4.14",
     "vue": "^2.7.10",
+    "vue-pro-modal": "^1.0.16",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
   },
