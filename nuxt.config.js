@@ -19,8 +19,13 @@ export default {
     height: '5px',
   },
 
+  styleResources: {
+    sass: ['@/assets/styles/variables.sass'],
+  },
+
   css: [
     '@/assets/styles/reset.sass',
+    '@/assets/styles/fonts.sass',
     '@/assets/styles/helpers.sass',
     '@/assets/styles/app.sass',
   ],
@@ -29,7 +34,7 @@ export default {
 
   components: true,
 
-  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'],
+  buildModules: ['@nuxtjs/style-resources', '@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'],
 
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],
 
