@@ -1,2 +1,8 @@
 .text-center
   text-align: center
+
+@include display()
+
+@each $bp, $size in $breakpoints
+  @media (min-width: $size)
+    @include display($bp)

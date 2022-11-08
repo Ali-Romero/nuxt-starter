@@ -1,5 +1,5 @@
 <template>
-  <app-layout>
+  <ui-layout>
     <template #header>
       <header>header</header>
     </template>
@@ -11,5 +11,5 @@
     <template #footer>
       <footer>footer</footer>
     </template>
-  </app-layout>
+  </ui-layout>
 </template>

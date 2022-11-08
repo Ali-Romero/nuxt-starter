@@ -1,0 +1,6 @@
+@mixin display($breakpoint: false)
+  $breakpoint: if($breakpoint,'-#{$breakpoint}','')
+
+  @each $display_value in $display
+    .d#{$breakpoint}-#{$display_value}
+      display: $display_value
