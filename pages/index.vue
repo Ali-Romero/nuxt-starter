@@ -5,16 +5,27 @@
     </template>
     <template #main>
       <div>
+        <div class="asdasd">
+
+        </div>
         <ui-modal v-model="modal">
           <div>modal</div>
         </ui-modal>
         <button @click="modal = true">modal</button>
-        <div style="height: 10000px">
+        <div>
           <div>
             <ui-icon name="brain" />
           </div>
           <div>
-            <img src="@/assets/images/logo.png" alt="" width="200" height="100">
+            <ui-image
+              src="logo.png"
+              img-class="test"
+              :modifiers="{ width: '200', height: '100' }"
+              sizes="sm:100px md:200px lg:400px"
+            />
+          </div>
+          <div>
+            <ui-image src="1.jpg" sizes="sm:100px md:200px lg:400px" />
           </div>
           <ui-form>
             <ui-validator v-slot="{ error }" show-message rules="required|email">

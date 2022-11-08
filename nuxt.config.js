@@ -37,9 +37,18 @@ export default {
 
   components: true,
 
-  buildModules: ['@nuxtjs/style-resources', '@nuxtjs/eslint-module', '@nuxtjs/stylelint-module'],
+  buildModules: [
+    '@nuxt/image',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/stylelint-module',
+  ],
 
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],
+
+  image: {
+    dir: 'assets/images',
+  },
 
   axios: {
     baseURL: BASE_URL,

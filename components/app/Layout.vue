@@ -1,12 +1,16 @@
 <template>
   <div class="layout">
-    <slot name="header" />
+    <div v-if="$scopedSlots.header" class="layout__header">
+      <slot name="header" />
+    </div>
 
     <main class="layout__main">
       <slot name="main" />
     </main>
 
-    <slot name="footer" />
+    <div v-if="$scopedSlots.footer" class="layout__footer">
+      <slot name="footer" />
+    </div>
   </div>
 </template>
 
@@ -16,6 +20,10 @@
   display: flex
   flex-direction: column
 
+  &__header,
+  &__footer
+    flex-shrink: 0
+
   &__main
-    flex: 1
+    flex-grow: 1
 </style>
