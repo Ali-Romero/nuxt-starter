@@ -52,7 +52,7 @@ export default {
   },
 
   build: {
-    transpile: ['vee-validate/dist/rules']
+    transpile: ['vee-validate/dist/rules', 'vue-pro-modal']
   },
 
   server: {
