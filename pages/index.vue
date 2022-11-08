@@ -13,7 +13,7 @@
         </ui-modal>
         <button @click="modal = true">modal</button>
         <div>
-          <div>
+          <div v-if="$screen.xxxl">
             <ui-icon name="brain" />
           </div>
           <div>
