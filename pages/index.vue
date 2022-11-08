@@ -5,37 +5,7 @@
     </template>
     <template #main>
       <div>
-        <div class="asdasd">
-
-        </div>
-        <ui-modal v-model="modal">
-          <div>modal</div>
-        </ui-modal>
-        <button @click="modal = true">modal</button>
-        <div>
-          <div v-if="$screen.xxxl">
-            <ui-icon name="brain" />
-          </div>
-          <div>
-            <ui-image
-              src="logo.png"
-              img-class="test"
-              :modifiers="{ width: '200', height: '100' }"
-              sizes="sm:100px md:200px lg:400px"
-            />
-          </div>
-          <div>
-            <ui-image src="1.jpg" sizes="sm:100px md:200px lg:400px" />
-          </div>
-          <ui-form>
-            <ui-validator v-slot="{ error }" show-message rules="required|email">
-              <ui-input v-model="value" :error="error" aria-label="Search" />
-            </ui-validator>
-            <ui-button type="submit">
-              submit
-            </ui-button>
-          </ui-form>
-        </div>
+        <ui-image-bg src="2.png" class="test-bg" sizes="sm:100px md:400px lg:800px" />
       </div>
     </template>
     <template #footer>
@@ -49,8 +19,12 @@ export default {
   data() {
     return {
       modal: false,
-      value: ''
     }
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.test-bg
+  height: 500px
+</style>

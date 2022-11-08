@@ -19,6 +19,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
+    "supports-webp": "^3.0.0",
     "v-mask": "^2.3.0",
     "vee-validate": "^3.4.14",
     "vue": "^2.7.10",
