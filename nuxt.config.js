@@ -18,8 +18,9 @@ export default {
     title: 'nuxt-starter',
     meta: [
       { charset: 'utf-8' },
+      { lang: 'ru' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'default description' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }],
@@ -31,7 +32,7 @@ export default {
   },
 
   styleResources: {
-    sass: ['@/assets/styles/variables.sass'],
+    sass: ['@/assets/styles/variables.sass', '@/assets/styles/mixins.sass'],
   },
 
   css: [
@@ -44,6 +45,8 @@ export default {
   plugins: [
     '@/plugins/validation.js',
     '@/plugins/scrollto.js',
+    '@/plugins/feedback.js',
+    { src: '@/plugins/ymaps.js', mode: 'client' },
   ],
 
   components: true,
@@ -74,7 +77,7 @@ export default {
 
   pwa: {
     manifest: {
-      lang: 'en',
+      lang: 'ru',
     },
   },
 

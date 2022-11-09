@@ -5,7 +5,6 @@
     </template>
     <template #main>
       <div>
-        <ui-image-bg src="2.png" class="test-bg" sizes="sm:100px md:400px lg:800px" />
       </div>
     </template>
     <template #footer>
