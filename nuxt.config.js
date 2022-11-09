@@ -82,7 +82,7 @@ export default {
   },
 
   build: {
-    transpile: ['vee-validate/dist/rules', 'vue-pro-modal']
+    transpile: ['vee-validate/dist/rules', 'vue-pro-modal', 'swiper'],
   },
 
   server: {
