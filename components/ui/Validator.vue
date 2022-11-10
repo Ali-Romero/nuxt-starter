@@ -26,6 +26,7 @@ export default {
   components: {
     ValidationProvider,
   },
+  inheritAttrs: false,
   props: {
     showMessage: {
       type: Boolean,

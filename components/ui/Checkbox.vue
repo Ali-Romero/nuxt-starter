@@ -1,5 +1,5 @@
 <template>
-  <label class="ui-checkbox" :class="classes">
+  <label class="ui-checkbox" :aria-label="ariaLabel" :class="classes">
     <input
       v-model="model"
       v-bind="$attrs"
@@ -28,6 +28,10 @@ export default {
     /* eslint-disable-next-line */
     inputValue: {
       required: true,
+    },
+    ariaLabel: {
+      type: String,
+      default: 'input',
     },
     /**
      * Предназначено для чекбоксов с массивом в качестве значения и для radio.

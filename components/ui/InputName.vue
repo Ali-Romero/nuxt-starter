@@ -1,3 +1,7 @@
 <template>
-  <ui-input v-bind="$attrs" v-on="$listeners" />
+  <ui-input
+    v-bind="$attrs"
+    aria-label="name"
+    v-on="$listeners"
+  />
 </template>

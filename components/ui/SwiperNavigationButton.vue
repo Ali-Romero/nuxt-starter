@@ -1,5 +1,11 @@
 <template>
-  <component :is="tag" ref="button" class="swiper-button" :class="classes">
+  <component
+    :is="tag"
+    ref="button"
+    aria-label="navigation button"
+    class="swiper-button"
+    :class="classes"
+  >
     <slot />
   </component>
 </template>

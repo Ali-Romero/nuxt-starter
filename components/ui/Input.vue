@@ -1,6 +1,5 @@
-<!-- eslint-disable vue/no-v-html -->
 <template>
-  <label class="ui-input" :class="classes">
+  <label class="ui-input" :aria-label="ariaLabel" :class="classes">
     <span v-if="icon" class="ui-input__icon">
       <slot name="icon">
         <ui-icon :name="icon" />
@@ -12,6 +11,7 @@
         v-mask="mask"
         v-bind="$attrs"
         class="ui-input__input"
+        :type="type"
         @focus="focus = true"
         @blur="focus = false"
         v-on="listeners"
@@ -31,10 +31,15 @@ export default {
   directives: {
     mask: VueMaskDirective,
   },
+  inheritAttrs: false,
   props: {
     value: {
       type: [String, Number],
       required: true,
+    },
+    type: {
+      type: String,
+      default: 'text',
     },
     error: {
       type: Boolean,
@@ -43,6 +48,10 @@ export default {
     icon: {
       type: String,
       default: '',
+    },
+    ariaLabel: {
+      type: String,
+      default: 'input',
     },
     /**
      * Маска для поля ввода. Использует директиву из модуля 'v-mask'
