@@ -7,23 +7,9 @@
     <template #main>
       <div style="max-width: 1000px; margin: auto;">
         <ui-swiper
-          :slides-per-view="value"
-          :loop="true"
-          :breakpoints="{
-            320: {
-              slidesPerView: 2,
-              spaceBetween: 20
-            },
-            480: {
-              slidesPerView: 3,
-              spaceBetween: 30
-            },
-            640: {
-              slidesPerView: 4,
-              spaceBetween: 40
-            }
-          }"
-      >
+          :params="{ slidesPerView: 2, loop: true }"
+          class="product-slider"
+        >
           <ui-swiper-wrapper>
             <ui-swiper-slide>1</ui-swiper-slide>
             <ui-swiper-slide>2</ui-swiper-slide>
@@ -63,6 +49,8 @@
 export default {
   data() {
     return {
+      test: false,
+      checkbox: '',
       value: 1
     }
   }

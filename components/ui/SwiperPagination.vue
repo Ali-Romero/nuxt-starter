@@ -3,14 +3,8 @@
 </template>
 
 <script>
-import camelize from 'camelize'
-
-const defaults = {
-  clickable: true
-}
-
 export default {
-  inject: ['setSwiperParams', 'updateSwiper'],
+  inject: ['setSwiperParams'],
   inheritAttrs: false,
   props: {
     tag: {
@@ -18,21 +12,10 @@ export default {
       default: 'div',
     }
   },
-  watch: {
-    $attrs: {
-      handler(value) {
-        this.setSwiperParams(camelize(value))
-        this.updateSwiper()
-      },
-      deep: true,
-    },
-  },
   mounted() {
     this.setSwiperParams({
       pagination: {
         el: this.$refs.pagination,
-        ...defaults,
-        ...camelize(this.$attrs)
       },
     })
   },

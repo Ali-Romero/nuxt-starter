@@ -7,17 +7,15 @@
 <script>
 // eslint-disable-next-line import/no-named-as-default
 import Swiper, { Navigation, Pagination } from 'swiper'
-import 'swiper/swiper.min.css'
 import merge from 'deepmerge'
 import { isPlainObject } from 'is-plain-object'
-import camelize from 'camelize'
 
 export default {
   provide() {
     return {
       swiper: new Swiper({
         modules: [Navigation, Pagination],
-        ...camelize(this.$attrs)
+        ...this.params
       }),
       updateSwiper: this.updateSwiper,
       setSwiperParams: this.setSwiperParams,
@@ -29,11 +27,15 @@ export default {
       type: String,
       default: 'div',
     },
+    params: {
+      type: Object,
+      default: () => ({}),
+    },
   },
   watch: {
-    $attrs: {
+    params: {
       handler(value) {
-        this.setSwiperParams(camelize(value))
+        this.setSwiperParams(value)
         this.updateSwiper()
       },
       deep: true,
@@ -41,8 +43,6 @@ export default {
   },
   mounted() {
     this._provided.swiper.init(this.$refs.swiper)
-    window.swiper = this._provided.swiper
-    window.comp = this
   },
   methods: {
     setSwiperParams(params) {
@@ -58,3 +58,17 @@ export default {
   },
 }
 </script>
+
+<style lang="sass" scoped>
+.swiper-pointer-events
+  touch-action: pan-y
+
+.swiper
+  margin-left: auto
+  margin-right: auto
+  position: relative
+  overflow: hidden
+  list-style: none
+  padding: 0
+  z-index: 1
+</style>

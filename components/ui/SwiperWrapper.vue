@@ -16,4 +16,13 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="sass" scoped>
+.swiper-wrapper
+  position: relative
+  width: 100%
+  height: 100%
+  z-index: 1
+  display: flex
+  transition-property: transform
+  box-sizing: content-box
+</style>

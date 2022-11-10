@@ -6,7 +6,6 @@
 
 <script>
 export default {
-  inject: ['setSwiperParams'],
   inheritAttrs: false,
   props: {
     tag: {
@@ -14,10 +13,7 @@ export default {
       default: 'div',
     }
   },
-  mounted() {
-    this.setSwiperParams({
-      navigation: {}
-    })
-  },
 }
 </script>
+
+<style lang="sass" scoped></style>
