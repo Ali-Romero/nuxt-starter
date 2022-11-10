@@ -6,37 +6,10 @@
     </template>
     <template #main>
       <div style="max-width: 1000px; margin: auto;">
-        <ui-swiper
-          :params="{ slidesPerView: 2, loop: true }"
-          class="product-slider"
-        >
-          <ui-swiper-wrapper>
-            <ui-swiper-slide>1</ui-swiper-slide>
-            <ui-swiper-slide>2</ui-swiper-slide>
-            <ui-swiper-slide>3</ui-swiper-slide>
-            <ui-swiper-slide>4</ui-swiper-slide>
-            <ui-swiper-slide>5</ui-swiper-slide>
-            <ui-swiper-slide>6</ui-swiper-slide>
-            <ui-swiper-slide>7</ui-swiper-slide>
-            <ui-swiper-slide>8</ui-swiper-slide>
-            <ui-swiper-slide>9</ui-swiper-slide>
-            <ui-swiper-slide>10</ui-swiper-slide>
-          </ui-swiper-wrapper>
-
-          <ui-swiper-pagination></ui-swiper-pagination>
-
-          <ui-swiper-navigation>
-            <ui-swiper-navigation-button next>
-              next
-            </ui-swiper-navigation-button>
-            <ui-swiper-navigation-button prev>
-              prev
-            </ui-swiper-navigation-button>
-          </ui-swiper-navigation>
-        </ui-swiper>
+        <ui-image src="logo.png" sizes="sm:50px md:100px lg:200px" />
       </div>
-      <hr style="margin: 30px 0">
-      <div style="max-width: 1000px; margin: auto;">
+      <div style="height: 400px">
+
       </div>
     </template>
     <template #footer>

@@ -58,11 +58,7 @@ export default {
     '@nuxtjs/stylelint-module',
   ],
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', 'vue-screen/nuxt'],
-
-  screen: {
-    ...BREAKPOINTS,
-  },
+  modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],
 
   image: {
     dir: 'assets/images',
