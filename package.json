@@ -19,6 +19,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.25.3",
     "deepmerge": "^4.2.2",
+    "gsap": "^3.11.3",
     "is-plain-object": "^5.0.0",
     "nuxt": "^2.15.8",
     "swiper": "^8.4.4",

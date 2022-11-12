@@ -1,27 +1,37 @@
 <template>
   <ui-layout>
     <template #header>
-      <header>header</header>
-      <app-feedback-form />
+      <header style="height: 100px">header</header>
     </template>
     <template #main>
-      <div style="max-width: 1000px; margin: auto;">
-        <ui-image src="logo.png" sizes="sm:50px md:100px lg:200px" />
+      <div style="height: 300px; background-color: grey;">
+        asd
       </div>
-      <div style="height: 400px">
-        <ui-swiper>
-          <ui-swiper-wrapper>
-            <ui-swiper-slide>1</ui-swiper-slide>
-            <ui-swiper-slide>2</ui-swiper-slide>
-            <ui-swiper-slide>3</ui-swiper-slide>
-            <ui-swiper-slide>4</ui-swiper-slide>
-          </ui-swiper-wrapper>
-
-          <ui-swiper-navigation>
-            <ui-swiper-navigation-button prev />
-            <ui-swiper-navigation-button next />
-          </ui-swiper-navigation>
-        </ui-swiper>
+      <div ref="test" style="height: 300px; background-color: brown;">
+        <div>
+          <div ref="xxx" style="width: 100px;">XXX</div>
+          <div ref="zzz">ZZZ</div>
+        </div>
+      </div>
+      <div style="height: 300px; background-color: purple;">
+        asd
+      </div>
+      <div style="height: 300px; background-color: grey;">
+        asd
+      </div>
+      <div style="height: 300px; background-color: green;">
+        asd
+      </div>
+      <div>
+        <div style="height: 300px; background-color: brown;">
+          <div>WWW</div>
+        </div>
+      </div>
+      <div style="height: 300px; background-color: purple;">
+        asd
+      </div>
+      <div style="height: 300px; background-color: grey;">
+        asd
       </div>
     </template>
     <template #footer>
@@ -31,6 +41,13 @@
 </template>
 
 <script>
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger);
+
+console.log(ScrollTrigger)
+
 export default {
   data() {
     return {
@@ -38,6 +55,22 @@ export default {
       checkbox: '',
       value: 1
     }
+  },
+  mounted() {
+    const test = gsap.timeline({
+      scrollTrigger: {
+        markers: true,
+        trigger: this.$refs.test,
+        pin: true,   // pin the trigger element while active
+        pinSpacing: true,
+        start: "top center", // when the top of the trigger hits the top of the viewport
+        end: "50%", // end after scrolling 500px beyond the start
+        scrub: true, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      }
+    });
+
+    test.to(this.$refs.xxx, { rotation: 360, duration: 1 }, 1)
+    test.to(this.$refs.zzz, { opacity: 0, duration: 1 }, 1)
   }
 }
 </script>

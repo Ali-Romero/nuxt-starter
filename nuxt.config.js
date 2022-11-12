@@ -83,7 +83,9 @@ export default {
       'vue-pro-modal',
       'swiper',
       'dom7',
-      'ssr-window'
+      'ssr-window',
+      'gsap',
+      'gsap/ScrollTrigger',
     ],
   },
 
