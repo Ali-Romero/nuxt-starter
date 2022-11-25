@@ -1,16 +1,5 @@
 const BASE_URL = '/project/nuxt-starter/'
 
-const BREAKPOINTS = {
-  xxs: 320,
-  xs: 576,
-  sm: 768,
-  md: 1024,
-  lg: 1200,
-  xl: 1300,
-  xxl: 1400,
-  xxxl: 1500
-}
-
 export default {
   target: 'static',
 
@@ -52,20 +41,12 @@ export default {
   components: true,
 
   buildModules: [
-    '@nuxt/image',
     '@nuxtjs/style-resources',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
   ],
 
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],
-
-  image: {
-    dir: 'assets/images',
-    screens: Object.fromEntries(
-      Object.entries(BREAKPOINTS).map(([key, value]) => [key, value - 1])
-    )
-  },
 
   axios: {
     baseURL: BASE_URL,
@@ -85,7 +66,6 @@ export default {
       'dom7',
       'ssr-window',
       'gsap',
-      'gsap/ScrollTrigger',
     ],
   },
 
