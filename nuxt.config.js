@@ -44,6 +44,7 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/eslint-module',
     '@nuxtjs/stylelint-module',
+    '@aceforth/nuxt-optimized-images',
   ],
 
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],

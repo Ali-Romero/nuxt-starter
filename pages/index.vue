@@ -4,7 +4,7 @@
       <header>header</header>
     </template>
     <template #main>
-      <div>main</div>
+      <div></div>
     </template>
     <template #footer>
       <footer>footer</footer>
