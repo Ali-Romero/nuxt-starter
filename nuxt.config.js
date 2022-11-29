@@ -1,5 +1,16 @@
 const BASE_URL = '/project/nuxt-starter/'
 
+const BREAKPOINTS = {
+  xxs: 320,
+  xs: 576,
+  sm: 768,
+  md: 1024,
+  lg: 1200,
+  xl: 1300,
+  xxl: 1400,
+  xxxl: 1500
+}
+
 export default {
   target: 'static',
 
@@ -20,6 +31,10 @@ export default {
     height: '5px',
   },
 
+  publicRuntimeConfig: {
+    breakpoints: BREAKPOINTS,
+  },
+
   styleResources: {
     sass: ['@/assets/styles/variables.sass', '@/assets/styles/mixins.sass'],
   },
@@ -35,6 +50,7 @@ export default {
     '@/plugins/validation.js',
     '@/plugins/scrollto.js',
     '@/plugins/feedback.js',
+    '@/plugins/gsap.js',
     { src: '@/plugins/ymaps.js', mode: 'client' },
   ],
 
