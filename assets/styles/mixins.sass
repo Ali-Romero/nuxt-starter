@@ -1,3 +1,7 @@
+@mixin above($bp)
+  @media (min-width: map-get($breakpoints, $bp))
+    @content
+
 @mixin display($breakpoint: false)
   $breakpoint: if($breakpoint,'-#{$breakpoint}','')
 
