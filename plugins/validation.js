@@ -1,13 +1,26 @@
 import { extend } from 'vee-validate'
-import { required, email } from 'vee-validate/dist/rules'
 
 extend('required', {
-  ...required,
+  validate(value) {
+    if (Array.isArray(value)) {
+      return !!value.length
+    }
+
+    if (typeof value === 'boolean') {
+      return true
+    }
+
+    return !!value
+  },
+  params: [ { name: 'allowFalse', default: true } ],
+  computesRequired: true,
   message: 'Поле обязательно для заполнения'
 })
 
 extend('email', {
-  ...email,
+  validate(value) {
+    return value.match(/^[a-zA-Z0-9_\\.%\\+\\-]+@[a-zA-Z0-9\\.\\-]+\.[a-zA-Z]{2,}$/);
+  },
   message: 'Неверный email адрес',
 })
 

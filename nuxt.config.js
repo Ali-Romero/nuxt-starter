@@ -77,8 +77,6 @@ export default {
 
   build: {
     transpile: [
-      'vee-validate',
-      'vue-pro-modal',
       'swiper',
       'dom7',
       'ssr-window',
