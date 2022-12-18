@@ -1,3 +1,3 @@
 <template>
-  <app-thanks-section></app-thanks-section>
+  <div></div>
 </template>
