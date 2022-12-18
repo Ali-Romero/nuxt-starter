@@ -19,7 +19,7 @@ export default {
   target: 'static',
 
   head: {
-    title: 'Оптовое швейное производство',
+    title: 'TITLE',
     meta: [
       { charset: 'utf-8' },
       { lang: 'ru' },
@@ -27,7 +27,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'text',
+        content: 'TITLE',
       },
       { name: 'format-detection', content: 'telephone=no' },
       {
