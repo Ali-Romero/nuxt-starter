@@ -8,3 +8,21 @@
   @each $display_value in $display
     .d#{$breakpoint}-#{$display_value}
       display: $display_value
+
+@mixin scrollbar
+  scrollbar-width: thin
+
+  &::-webkit-scrollbar
+    width: 15px
+
+  &::-webkit-scrollbar-track
+    background-color: transparent
+
+  &::-webkit-scrollbar-thumb
+    border: 6px solid transparent
+    background-clip: padding-box
+    border-radius: 10px
+    background-color: transparentize(grey, 0.2)
+
+    &:hover
+      background-color: grey

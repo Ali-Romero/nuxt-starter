@@ -27,7 +27,7 @@ export default {
 
       this.loading = false
     }
-  }
+  },
 }
 </script>
 
@@ -42,15 +42,16 @@ export default {
     width: 100%
     height: 100%
     position: fixed
+    z-index: 9999
     top: 0
     left: 0
-    background-color: #FFFFFF
+    background-color: #F4F4F4
 
   &__spinner
     width: 10px
     height: 10px
     border-radius: 100%
-    background-color: #243287
+    background-color: #77BFD7
     animation: loading 0.4s infinite alternate-reverse
 
     &--2

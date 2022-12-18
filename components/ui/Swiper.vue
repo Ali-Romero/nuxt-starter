@@ -15,7 +15,7 @@ export default {
     return {
       swiper: new Swiper({
         modules: [Navigation, Pagination],
-        ...this.params
+        ...this.params,
       }),
       updateSwiper: this.updateSwiper,
       setSwiperParams: this.setSwiperParams,
@@ -23,6 +23,10 @@ export default {
   },
   inheritAttrs: false,
   props: {
+    value: {
+      type: Number,
+      default: 0,
+    },
     tag: {
       type: String,
       default: 'div',
@@ -40,16 +44,32 @@ export default {
       },
       deep: true,
     },
+    value: {
+      handler(value) {
+        this._provided.swiper.slideTo(value)
+      },
+    },
   },
   mounted() {
     this._provided.swiper.init(this.$refs.swiper)
+
+    this._provided.swiper.on('slideChange', this.onChange)
+  },
+  beforeDestroy() {
+    this._provided.swiper.off('slideChange', this.onChange)
   },
   methods: {
+    onChange(swiper) {
+      this.$emit('input', swiper.activeIndex)
+    },
     setSwiperParams(params) {
       this._provided.swiper.params = merge(
         this._provided.swiper.params,
         params,
-        { arrayMerge: (_, sourceArray) => sourceArray, isMergeableObject: isPlainObject }
+        {
+          arrayMerge: (_, sourceArray) => sourceArray,
+          isMergeableObject: isPlainObject,
+        }
       )
     },
     updateSwiper() {

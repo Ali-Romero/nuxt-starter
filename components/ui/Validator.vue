@@ -4,6 +4,7 @@
     v-bind="$attrs"
     class="ui-validator"
     tag="div"
+    mode="lazy"
   >
     <div class="ui-validator__field">
       <slot v-bind="{ error: !!errors.length }" />
@@ -38,10 +39,32 @@ export default {
 
 <style lang="sass" scoped>
 .ui-validator
+  position: relative
+  &__field
+    height: 100%
   &__error
+    position: absolute
     display: inline-block
-    color: red
+    color: #b11d1d
     animation: shake 0.3s 0.3s
+    font-size: 11px
+    line-height: 12px
+    left: 16px
+    font-family: 'Montserrat-Medium'
+    bottom: -13px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      font-size: 12px
+      left: 5px
+      bottom: -14px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      font-size: 14px
+      line-height: 16px
+      left: 2px
+      bottom: -16px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      font-size: 15px
+      line-height: 16px
+      bottom: -17px
 
 @keyframes shake
   0%
@@ -49,9 +72,9 @@ export default {
   25%
     transform: translateX(10px)
   50%
-    transform: translateX(-5px)
+    transform: translateX(-6px)
   75%
-    transform: translateX(5px)
+    transform: translateX(6px)
   100%
     transform: translateX(0)
 </style>

@@ -6,7 +6,7 @@ const settings = {
   lang: 'ru_RU',
   coordorder: 'latlong',
   enterprise: false,
-  version: '2.1'
+  version: '2.1',
 }
 
 Vue.use(YmapPlugin, settings)
@@ -18,7 +18,7 @@ export default async (ctx, inject) => {
     async getGeoObjects() {
       const result = await window.ymaps.geolocation.get({
         provider: 'yandex',
-        autoReverseGeocode: true
+        autoReverseGeocode: true,
       })
 
       return result.geoObjects
@@ -31,18 +31,19 @@ export default async (ctx, inject) => {
     async getUserLocationIp() {
       const geoObjects = await this.getGeoObjects()
       const translates = {
-        country: "Страна",
-        province: "Округ",
-        area: "Подокруг",
-        locality: "Город",
+        country: 'Страна',
+        province: 'Округ',
+        area: 'Подокруг',
+        locality: 'Город',
       }
       const properties = geoObjects.get(0).properties
-      const components = properties.get('metaDataProperty').GeocoderMetaData.Address.Components
+      const components = properties.get('metaDataProperty').GeocoderMetaData
+        .Address.Components
       const mappedArray = components.map((item) => {
-        return translates[item.kind] + ": " + item.name
+        return translates[item.kind] + ': ' + item.name
       })
 
       return mappedArray.join(', ')
-    }
+    },
   })
 }

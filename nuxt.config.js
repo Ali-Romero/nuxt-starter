@@ -1,4 +1,4 @@
-const BASE_URL = '/project/nuxt-starter/'
+const BASE_URL = '/'
 
 const BREAKPOINTS = {
   xxs: 320,
@@ -8,20 +8,32 @@ const BREAKPOINTS = {
   lg: 1200,
   xl: 1300,
   xxl: 1400,
-  xxxl: 1500
+  xxxl: 1500,
+  xxxxxl: 1700,
+  xxxxxxxl: 1920,
 }
+
+const HEADER_HEIGHT = 66
 
 export default {
   target: 'static',
 
   head: {
-    title: 'nuxt-starter',
+    title: 'Оптовое швейное производство',
     meta: [
       { charset: 'utf-8' },
       { lang: 'ru' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'default description' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'text',
+      },
       { name: 'format-detection', content: 'telephone=no' },
+      {
+        name: 'keywords',
+        content: '',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }],
   },
@@ -32,7 +44,12 @@ export default {
   },
 
   publicRuntimeConfig: {
+    headerHeight: HEADER_HEIGHT,
+  },
+
+  env: {
     breakpoints: BREAKPOINTS,
+    headerHeight: HEADER_HEIGHT,
   },
 
   styleResources: {
@@ -48,9 +65,8 @@ export default {
 
   plugins: [
     '@/plugins/validation.js',
-    '@/plugins/scrollto.js',
     '@/plugins/feedback.js',
-    '@/plugins/gsap.js',
+    { src: '@/plugins/gsap/index.js', mode: 'client' },
     { src: '@/plugins/ymaps.js', mode: 'client' },
   ],
 
@@ -65,6 +81,13 @@ export default {
 
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa'],
 
+  optimizedImages: {
+    webp: {
+      preset: 'default',
+      quality: 86,
+    },
+  },
+
   axios: {
     baseURL: BASE_URL,
   },
@@ -76,12 +99,7 @@ export default {
   },
 
   build: {
-    transpile: [
-      'swiper',
-      'dom7',
-      'ssr-window',
-      'gsap',
-    ],
+    transpile: ['swiper', 'dom7', 'ssr-window', 'gsap'],
   },
 
   server: {

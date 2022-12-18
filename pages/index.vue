@@ -1,13 +1,16 @@
 <template>
-  <ui-layout>
-    <template #header>
-      <header>header</header>
-    </template>
-    <template #main>
-      <div>main</div>
-    </template>
-    <template #footer>
-      <footer>footer</footer>
-    </template>
-  </ui-layout>
+  <div>
+    <app-main-section></app-main-section>
+    <app-catalog-section></app-catalog-section>
+    <app-stages-section></app-stages-section>
+    <app-examples-section></app-examples-section>
+    <app-advantage-section></app-advantage-section>
+    <app-recommendation-section></app-recommendation-section>
+    <app-calculation-section></app-calculation-section>
+    <app-about-section></app-about-section>
+    <app-reviews-section></app-reviews-section>
+    <app-consultation-section></app-consultation-section>
+    <app-contacts-section></app-contacts-section>
+    <app-detect-leave-page></app-detect-leave-page>
+  </div>
 </template>

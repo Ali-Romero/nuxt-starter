@@ -1,5 +1,59 @@
-.text-center
-  text-align: center
+.title
+  font-size: 21px
+  line-height: 26px
+  font-weight: 400
+  @media (min-width: map-get($breakpoints, 'sm'))
+    font-size: 36px
+    line-height: 42px
+  @media (min-width: map-get($breakpoints, 'lg'))
+    font-size: 52px
+    line-height: 62px
+  @media (min-width: map-get($breakpoints, 'xxxl'))
+    font-size: 62px
+    line-height: 76px
+
+.title-secondary
+  font-size: 25px
+  line-height: 30px
+  position: relative
+  font-weight: 400
+  @media (min-width: map-get($breakpoints, 'sm'))
+    font-size: 28px
+    line-height: 32px
+  @media (min-width: map-get($breakpoints, 'lg'))
+    font-size: 30px
+    line-height: 40px
+  @media (min-width: map-get($breakpoints, 'xxxl'))
+    font-size: 38px
+    line-height: 46px
+  span
+    padding-left: 79px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      padding-left: 328px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      padding-left: 360px
+  &:before
+    content: ""
+    position: absolute
+    left: 0
+    width: 100%
+    height: 1px
+    background-color: black
+    top: 16px
+    max-width: 70px
+    @media (min-width: map-get($breakpoints, 'sm'))
+      height: 2px
+      max-width: 298px
+    @media (min-width: map-get($breakpoints, 'lg'))
+      top: 22px
+    @media (min-width: map-get($breakpoints, 'xxxl'))
+      max-width: 328px
+
+.text-bold
+  font-family: 'Montserrat-SemiBold'
+
+.o-hidden
+  overflow: hidden
 
 @include display()
 
